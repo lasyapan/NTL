@@ -49,4 +49,4 @@ def writetosql(pulse, temp, mq135, mq9, loc):
     
 
 if __name__ == "__main__":
-    app.run(host ="localhost", port = int("5000"))
+    app.run()
