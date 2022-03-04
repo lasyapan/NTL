@@ -23,7 +23,6 @@ def main():
     c.close()
     conn.close()
     coords = re.split(r",", account[5])
-    print(len(coords))
     if len(coords) == 2:
         latit = coords[0] 
         longit = coords[1] 
@@ -31,7 +30,7 @@ def main():
         latit = coords[0]
         longit = coords[0]
     
-    return render_template('main.html', PULSE = account[1], TEMP = account[2], MQ135 = account[3], MQ9 = account[4], LONG = account[5], LAT = account[5])
+    return render_template('main.html', PULSE = account[1], TEMP = account[2], MQ135 = account[3], MQ9 = account[4], LONG = longit, LAT = latit)
 
 @app.route("/update/PULSE=<pulse>/TEMP=<temp>/MQ135=<mq135>/MQ9=<mq9>/LOC=<loc>", methods=['GET'])
 def writetosql(pulse, temp, mq135, mq9, loc):
