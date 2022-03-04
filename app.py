@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 import re
 import os
-app = Flask(__name__, template_folder='../templates',static_folder='../static')
+app = Flask(__name__)
 count = 0
 
 #creation of db 
