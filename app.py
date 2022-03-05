@@ -34,7 +34,7 @@ def main():
 
 @app.route("/update/APIKEY=<api_key>/PULSE=<pulse>/TEMP=<temp>/MQ135=<mq135>/MQ9=<mq9>/LOC=<loc>", methods=['GET', 'POST'])
 def writetosql(api_key, pulse, temp, mq135, mq9, loc):
-    if len(re.findall(r',', loc)) < 2 and api_key == '694201a':
+    if api_key == '694201a':
         conn = sqlite3.connect('device.db')
         curs = conn.cursor()
         curs.execute("INSERT INTO device VALUES(:ID, :pulse, :temp, :mq135, :mq9, :loc)", {'ID': None, 'pulse': int(pulse), 'temp': int(temp), 'mq135': int(mq135), 'mq9': int(mq9), 'loc': loc})
